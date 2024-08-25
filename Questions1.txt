@@ -1,0 +1,131 @@
+//Write a for loop in Kotlin to print the names of all customers stored in an array.
+fun main() {
+    var customers=arrayOf("Shiva","Jatin","Ram","Omveer","Saksham")
+    for(i in customers){
+        println(i)
+    }
+}
+
+//How would you use a for loop in Kotlin to calculate the total sales from an array of daily sales figures?
+
+fun main(){
+    val dailysales=arrayOf(145.0, 56.7, 78.9, 34.2, 89.7, 234.0)
+    var totalsales=0.0
+    for(i in dailysales){
+        totalsales+=i
+    }
+    print(totalsales)
+}
+
+//Create a for loop in Kotlin that iterates over a list of customer ages and prints out only the ages above 30.package
+
+fun main(){
+    val customerages=arrayOf(45, 23, 5, 6, 67 ,68, 78 ,34, 45, 23, 12, 26, 27, 28, 29, 60, 70)
+    for(i in customerages){
+        if(i>30){
+            println(i)
+        }
+    }
+}
+
+//Write a for loop to count how many customers made a purchase above $100 in a list of purchase amounts.
+
+fun main(){
+    val customers=arrayOf(101,232,15,169,85,96,74,456,95,756,156)
+    var count=0
+    for(i in customers){
+        if(i>100){
+           count=count+1 
+        }
+    }
+    print(count)
+}
+
+
+//Write a Kotlin program using if-else to check if a customer is eligible for a discount 
+//based on their loyalty points (e.g., eligible if points are greater than 100).
+
+fun main(){
+   val loyaltyPoints=123456678990  //  
+    if(loyaltyPoints>100){
+        print("eligible for a discount")
+    }else{
+        print("not eligible for a discount")
+    }
+}
+
+ //How can you use an if-else statement in Kotlin to categorize a customer's age group 
+ //(e.g., "Child" if under 12, "Teen" if under 18, "Adult" otherwise)?
+
+fun main(){
+    val age=45
+    if(age<12){
+        print("This age is for child")
+    }else if(age>12 && age<18){
+        print("This age for Teen")
+    }else{
+        print("Adult")
+    }
+    }
+
+ //Create an if-else statement to determine if a customer’s purchase qualifies for free shipping based on the total amount spent.
+
+fun main(){
+    val totalamount=185
+    if(totalamount>100){
+        print("qualifies for free shipping")
+    }else{
+        print("not qualifies for free shipping")
+    }
+} 
+
+//Write a Kotlin program using if-else to check if a customer's email address ends with a specific domain (e.g., @gmail.com).
+fun main(){
+    val id="aryaanjali203@gmail.com"
+    if(id.endsWith("@gmail.com")){
+        print("Yes, my email ends with a gmail.com")
+    }else{
+        print("not ends with @gamil.com")
+    }
+}
+
+//We can print all the emails that ends with @gamil.com
+
+fun main(){
+    val ids=arrayOf("aryaanjali203@gmail.com","aa@gmail.com","is@gmail.com","aryanjali203@outlook.com","abc@outlook.com")
+    for(i in ids){
+    if(i.endsWith("@gmail.com")){
+        println(i)
+    }else{
+        println("ends with @outlook.com")
+    }
+        
+    }
+}
+
+//Let's check startsWith
+fun main(){
+    val ids=listOf("anu","anjali","arya","rd","bhumi","shabnam","soni","annu")
+    for(i in ids){
+        if(i.startsWith("a")){
+            println(i)
+        }else{
+            println("not starts with a")
+        }
+    }
+}
+
+//How would you use an if-else statement in Kotlin to print a personalized marketing message 
+//based on whether the customer is a first-time buyer?
+
+
+fun main() {
+    val isFirstTimeBuyer = true
+
+    if (isFirstTimeBuyer) {
+        println("Welcome! Enjoy a special discount on your first purchase.")
+    } else {
+        println("Welcome back! Check out our latest offers for returning customers.")
+    }
+}
+ 
