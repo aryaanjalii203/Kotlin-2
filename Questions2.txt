@@ -1,0 +1,181 @@
+
+// 1-What is the purpose of default parameter values in Kotlin functions? Provide an example.
+    
+fun mymain(name:String="Guest"){
+    println("Hello, $name")
+}
+fun main(){
+    mymain("Alice")
+    mymain()
+}
+
+//2-How do you define a function in Kotlin that has parameters with default values? Illustrate with code.
+fun mymain(num1:Int=10,num2:Int=15):Int{
+    return num1+num2
+}
+fun main(){
+    println(mymain(7,7))
+    println(mymain())
+}
+
+//3-Explain how function calls in Kotlin differ when using default parameter values versus explicitly provided arguments.
+
+fun multiply(x: Int = 2, y: Int = 3): Int {
+    return x * y
+}
+
+fun main() {
+    println(multiply(5, 4)) // Output: 20 (explicitly provided arguments)
+    println(multiply())     // Output: 6  (using default values)
+}
+
+//4-Can a function in Kotlin have some parameters with default values and others without? Demonstrate with an example.
+fun divide(numerator: Int, denominator: Int = 1): Int {
+    return numerator / denominator
+}
+
+fun main() {
+    println(divide(10, 2)) // Output: 5
+    println(divide(10))    // Output: 10
+}
+
+//5-What happens when you call a Kotlin function without providing arguments for parameters that have default values?
+fun power(base: Int = 2, exponent: Int = 3): Int {
+    return Math.pow(base.toDouble(), exponent.toDouble()).toInt()
+}
+
+fun main() {
+    println(power(3, 4)) // Output: 81
+    println(power())     // Output: 8 (2^3)
+}
+
+//6-How would you use a Kotlin class to calculate and display the area of a rectangle given its width and length, 
+//and then create an instance of the class to print the area?
+
+class Rectangle(val width: Double, val length: Double) {
+    
+    val area=width*length
+    
+    fun display() {
+        println("The area of the rectangle is: ${area}")
+    }
+}
+
+fun main() {
+    val rectangle = Rectangle(5.0, 10.0)
+    rectangle.display()
+}
+
+//7-How would you implement a recursive function in Kotlin to calculate the factorial of a given number, 
+//and then use it to compute the factorial of 5?
+
+fun fact(n:Int):Int{
+    if(n<=0){
+        return 1
+    }
+    return n*fact(n-1)
+}
+fun main(){
+    val a=fact(5)
+   print(a)
+}
+
+//8-How would you modify the given Kotlin code to calculate and display the area of both a rectangle and a square using inheritance?
+
+open class Rectangle(val width: Double, val length: Double) {
+    val area = width * length
+
+    fun display() {
+        println("The area of the rectangle is: $area")
+    }
+}
+
+class Square(side: Double) : Rectangle(side, side) {
+    val squareArea = side * side
+
+    fun displaySquare() {
+        println("The area of the square is: $squareArea")
+    }
+}
+
+fun main() {
+    val rectangle = Rectangle(5.0, 10.0)
+    rectangle.display()
+
+    val square = Square(4.0)
+    square.displaySquare()
+}
+
+//9- You can also find the area of circle 
+
+open class Rectangle(val width: Double, val length: Double) {
+    val area = width * length
+
+    fun display() {
+        println("The area of the rectangle is: $area")
+    }
+}
+
+class Square(side: Double) : Rectangle(side, side) {
+    val squareArea = side * side
+
+    fun displaySquare() {
+        println("The area of the square is: $squareArea")
+    }
+}
+class Circle(val radius:Int){
+    val circleArea=(22*radius*radius)/7
+    
+    fun displayCircle(){
+        println("The area of the circle is: $circleArea")
+    }
+}
+
+fun main() {
+    val rectangle = Rectangle(5.0, 10.0)
+    rectangle.display()
+
+    val square = Square(4.0)
+    square.displaySquare()
+    
+    val circle=Circle(14)
+    circle.displayCircle()
+}
+
+//10-What are primary and secondary constructors in Kotlin?
+
+//Primary Constructor:Declared directly after the class name.
+fun main() {
+    class Car(val brand: String = "Porsche", var year: Int=2023) {
+        init {
+            println("The car brand is $brand")
+        }
+    }
+    val car=Car()
+}
+
+//another way of writing the same output
+class Car(val brand: String = "Porsche", val year: Int = 2023)
+
+fun main() {
+    val car = Car()
+    println(car.brand) 
+    println(car.year)
+}
+
+//Secondary Constructor: Declared with the constructor keyword and can be used to provide additional ways to initialize the class.
+
+class Car(val brand: String, var year: Int) {
+    constructor(brand: String) : this(brand, 2020)
+}
+
+fun main() {
+    
+    val car1 = Car("Porsche", 2023)
+    println("Car 1: Brand = ${car1.brand}, Year = ${car1.year}")
+    
+    val car2 = Car("Ferrari")
+    println("Car 2: Brand = ${car2.brand}, Year = ${car2.year}") 
+    
+}
+
